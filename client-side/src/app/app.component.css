@@ -1,0 +1,178 @@
+.example-container {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .5rem 1rem;
+    color: #fff;
+    height: 8rem;
+    background: #002d72;
+}
+
+.header-content {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    flex: 1 1 0%;
+}
+
+.header-content-left {
+    /* flex: 1 1 100%;
+    box-sizing: border-box;
+    max-width: 40%; */
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header-content-right {
+    width: 50%;
+    /* flex: 1 1 0%;
+    box-sizing: border-box;
+    text-align: right; */
+}
+
+.navbar {
+    float: right;
+}
+
+.header-content-center {
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.header-nav-content {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    white-space: nowrap;
+    line-height: normal;
+}
+
+.button {
+    border-left: none;
+}
+
+.dash-button {
+    display: block;
+    vertical-align: middle;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 50px;
+    height: 50px;
+}
+
+.viewer-nav {
+    /* background: #eee; */
+    background: #002d72;
+    position: sticky;
+    top: 25px;
+}
+
+.mat-drawer {
+    background: #002d72 !important;
+    color: #fff !important;
+    ;
+}
+
+.viewer-nav-content {
+    color: #fff;
+    margin: 20px;
+    width: 240px;
+    overflow: auto;
+    background: #002d72;
+    /* background: rgb(14, 1, 1); */
+    /* background: rgba(0, 0, 0, .03); */
+}
+
+.viewer {
+    background: #eee;
+    font-weight: 400;
+    padding: 20px 50px 50px 20px;
+    width: 100%;
+    ;
+}
+
+.viewer-content {
+    position: relative;
+    min-height: 500px;
+}
+
+.sidenav-nav-content {
+    width: 240px;
+    overflow: auto;
+}
+
+.menubar-icon:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.app-header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.app-footer {
+    background: #002d72;
+    padding: .5rem 1rem;
+    color: #fff;
+    margin-top: 2rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100%;
+}
+
+.sidenav-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin-top: 80px;
+}
+
+.sidenav-body-content {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.sidenav-inner-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.nav-content-btn {
+    padding: 10px 15px;
+    font-weight: 700;
+    line-height: 16px;
+    margin: 0;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: 0 0;
+    border: none;
+    outline: none;
+}
+
+.app-content {
+    display: flex;
+    flex-wrap: wrap;
+}

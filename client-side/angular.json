@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "FIFA": {
+    "client-side": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/FIFA",
+            "outputPath": "dist/client-side",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "FIFA:build"
+            "browserTarget": "client-side:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "FIFA:build:production"
+              "browserTarget": "client-side:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "FIFA:build"
+            "browserTarget": "client-side:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "FIFA-e2e": {
+    "client-side-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "FIFA:serve"
+            "devServerTarget": "client-side:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "FIFA:serve:production"
+              "devServerTarget": "client-side:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "FIFA"
+  "defaultProject": "client-side"
 }
