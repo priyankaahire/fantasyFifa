@@ -1,0 +1,35 @@
+{{username}}
+<br />
+<button (click)="logout()">Logout</button>
+<hr />
+<ul>
+  <li *ngFor="let match of matches | async">
+    {{match.firstteam}} vs {{match.secondteam}}
+    <small>{{match.starttime | date:"MMM d, y h:mm a"}}</small>
+    <br/>
+    <span>Current Selected: {{match.currentSelected(userid)}}</span>
+    <br/>
+    <label>
+      <input [disabled]="freezeBettings(match.starttime)" type="radio"
+        [checked]="teamselection[match.key] == FIRSTTEAM"
+        [value]="FIRSTTEAM"
+        (change)="onSelectionChange(FIRSTTEAM, match.key)"  >
+      {{match.firstteam}}
+    </label>
+    <label>
+      <input [disabled]="freezeBettings(match.starttime)" type="radio"
+        [checked]="teamselection[match.key] == SECONDTEAM"
+        [value]="SECONDTEAM"
+        (change)="onSelectionChange(SECONDTEAM, match.key)" >
+      {{match.secondteam}}
+    </label>
+    <label>
+      <input [disabled]="freezeBettings(match.starttime)" type="radio"
+      [checked]="teamselection[match.key] == DRAW"
+      [value]="DRAW"
+      (change)="onSelectionChange(DRAW, match.key)" >
+      Draw
+    </label>
+    <button [disabled]="freezeBettings(match.starttime)" (click)="placeBet(match.key)">Save</button>
+  </li>
+</ul>
