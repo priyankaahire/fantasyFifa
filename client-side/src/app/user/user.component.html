@@ -1,12 +1,142 @@
 <div class="user-container">
-    <div class="example-container">
-        <form class="example-container">
-            <div>
-                <mat-radio-group>
-                    <mat-radio-button value="1">Option 1</mat-radio-button>
-                    <mat-radio-button value="2">Option 2</mat-radio-button>
-                </mat-radio-group>
-            </div>
-        </form>
+    <div class="match-description">
+        <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="team1">
+                  <th mat-header-cell *matHeaderCellDef> Team1 </th>
+                  <td mat-cell *matCellDef="let element"> {{element.team1}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="team2">
+                  <th mat-header-cell *matHeaderCellDef> Team2 </th>
+                  <td mat-cell *matCellDef="let element"> {{element.team2}} </td>
+                </ng-container>
+                <ng-container matColumnDef="time">
+                  <th mat-header-cell *matHeaderCellDef> Time </th>
+                  <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table> -->
+        <!-- <table class="table table-bordered">
+      <caption>Today's Match</caption>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Flag</th>
+          <th>Team1</th>
+          <th>Flag</th>
+          <th>Team2</th>
+          <th>Date & Time</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Flag</td>
+          <td>Russia</td>
+          <td>Flag</td>
+          <td>Russia</td>
+          <td>12 PM - 12:15 AM</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Flag</td>
+            <td>Russia</td>
+            <td>Flag</td>
+            <td>Russia</td>
+            <td>12 PM - 12:15 AM</td>
+          </tr>
+
+          <tr>
+              <td>1</td>
+              <td>Flag</td>
+              <td>Russia</td>
+              <td>Flag</td>
+              <td>Russia</td>
+              <td>12 PM - 12:15 AM</td>
+            </tr>
+      </tbody>
+
+    </table> -->
+        <mat-card class="" style="height: 100px;
+    margin-bottom: 12px;">
+            <mat-card-content>
+                <div class="" style="width:40%; float: left;">
+                    <span>Saturday 16 
+                June 16 Jun 2018 - 13:00 Local time 
+                Group C Kazan Arena Kazan</span>
+                </div>
+                <div class="" style="width:40%; float: right; ">
+                    <mat-radio-group ngDefaultControl name="example-radio-group" class="example-radio-group" [(ngModel)]="selectedTeam">
+                        <mat-radio-button name="example-radio-button" class="example-radio-button" *ngFor="let team of teams" [value]="team">
+                            <!-- <span><img style="width:25px;" src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/rus"></span> -->
+                            {{team}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                    <div class="example-selected-value">Your favorite Team is: {{selectedTeam}}</div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="" style="height: 100px;
+    margin-bottom: 12px;">
+            <mat-card-content>
+                <div class="" style="width:40%; float: left;">
+                    <p>
+                        Saturday 16 June 16 Jun 2018 - 13:00 Local time Group C Kazan Arena Kazan
+                    </p>
+                </div>
+                <div class="" style="width:40%; float: right;">
+                    <mat-radio-group ngDefaultControl name="example-radio-group" class="example-radio-group" [(ngModel)]="selectedTeam">
+                        <mat-radio-button name="example-radio-button" class="example-radio-button" *ngFor="let team of teams" [value]="team">
+                            <!-- <span><img style="width:25px;" src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/rus"></span>  -->
+                            {{team}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                    <div class="example-selected-value">Your favorite Team is: {{selectedTeam}}</div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="" style="height: 100px;
+    margin-bottom: 12px;">
+            <mat-card-content>
+                <div class="" style="width:40%; float: left;">
+                    <p>
+                        Saturday 16 June 16 Jun 2018 - 13:00 Local time Group C Kazan Arena Kazan
+                    </p>
+                </div>
+                <div class="" style="width:40%; float: right;">
+                    <mat-radio-group ngDefaultControl name="example-radio-group" class="example-radio-group" [(ngModel)]="selectedTeam">
+                        <mat-radio-button name="example-radio-button" class="example-radio-button" *ngFor="let team of teams" [value]="team">
+                            <!-- <span><img style="width:25px;" src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/rus"></span>  -->
+                            {{team}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                    <div class="example-selected-value">Your favorite Team is: {{selectedTeam}}</div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="team-selection">
+        <!-- <div class="team-selection-content">
+      <mat-radio-group ngDefaultControl name="example-radio-group" class="example-radio-group" [(ngModel)]="selectedTeam">
+        <mat-radio-button name="example-radio-button" class="example-radio-button" *ngFor="let team of teams" [value]="team">
+          <span><img style="width:25px;" src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/rus"></span> {{team}} 
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="example-selected-value">Your favorite Team is: {{selectedTeam}}</div>
+    </div>
+    <div class="team-selection-button">
+      <button mat-raised-button color="primary">Primary</button>
+    </div> -->
     </div>
 </div>

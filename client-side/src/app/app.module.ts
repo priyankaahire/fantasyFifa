@@ -6,14 +6,16 @@ import {SharedModule} from './shared/shared.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
+import { AppRoutingModule } from './app-routing.module';
+import {HttpModule} from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent, DashboardComponent, UserComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule,
+    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule, AppRoutingModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

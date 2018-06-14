@@ -2,12 +2,29 @@
     <div class="header">
         <div class="header-content">
             <div class="header-content-left">
-                <button mat-button>
-                            <mat-icon class="menubar-icon" (click)="drawer.toggle()">menubar</mat-icon>
-                </button>
+                {{ title }}!
+                <!-- <button mat-button>
+                    <mat-icon class="menubar-icon" (click)="drawer.toggle()">menubar</mat-icon>
+                </button> -->
+            </div>
+            <div class="header-content-center">
             </div>
             <div class="header-content-right">
-                {{ title }}!
+                <!-- <div>
+                    <div class="">
+                        <div class="header-nav-content">
+                            <div class="dash-button" >
+                                <button type="button" (click)="goToDashboard()" > Dashboard</button>
+                            </div>
+                            <div>
+                                <button type="button" (click)="goToDashboard()">Match Details</button>
+                            </div>
+                            <div>
+                                <button type="button" >Rule</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -21,19 +38,20 @@
                         <div class="viewer-nav-content">
                             <mat-sidenav #drawer mode="side" opened>
                                 <div class="sidenav-nav-content">
-                                    <button class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false"> Dashboard</button>
-                                    <button class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Match Details</button>
+                                    <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms"
+                                        aria-expanded="false"> Dashboard</button>
+                                    <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms"
+                                        aria-expanded="false">Match Details</button>
                                     <button class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Rule</button>
-                                    <button class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">User</button>
+                                    <button (click)="goToUser()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms"
+                                        aria-expanded="false">User</button>
                                 </div>
                             </mat-sidenav>
                         </div>
                     </div>
                     <div class="viewer">
                         <div class="viewer-content">
-                            <h1>Welcome to {{ title }}!</h1>
-                            <app-user></app-user>
-
+                            <router-outlet></router-outlet>
                         </div>
                     </div>
                 </div>
