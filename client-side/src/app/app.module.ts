@@ -8,9 +8,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpModule} from '@angular/http';
+import { TeamComponent } from './team/team.component';
 @NgModule({
   declarations: [
-    AppComponent, DashboardComponent, UserComponent
+    AppComponent, DashboardComponent, UserComponent, TeamComponent
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule, ReactiveFormsModule,

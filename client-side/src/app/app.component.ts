@@ -14,6 +14,9 @@ export class AppComponent {
   onDashboarClick() {
   }
   goToUser() {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/user']);
+  }
+  goToTeam() {
+    this.router.navigate(['/team']);
   }
 }

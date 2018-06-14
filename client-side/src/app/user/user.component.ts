@@ -29,12 +29,12 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     this.setTodaysTeam();
    // this.getDataOfTeams();
-  } 
+  }
   setTodaysTeam() {
   this.teams = [
     'Russia',
     'Saudi Arabia',
-    'D',
+    'Drop',
   ];
   }
   getDataOfTeams() {

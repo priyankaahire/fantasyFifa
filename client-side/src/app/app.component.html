@@ -10,6 +10,31 @@
             <div class="header-content-center">
             </div>
             <div class="header-content-right">
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false"> Dashboard</button></li>
+                            <li>
+                                <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Match Details</button>
+                            </li>
+                            <li>
+                                <button (click)="goToTeam()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Team</button>
+
+                            </li>
+                            <li>
+                                <button class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Rule</button>
+
+                            </li>
+
+                            <li>
+                                <button (click)="goToUser()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Login</button>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
                 <!-- <div>
                     <div class="">
                         <div class="header-nav-content">
@@ -34,21 +59,18 @@
         <div class="sidenav-content">
             <div class="sidenav-inner-content">
                 <div class="sidenav-body-content">
-                    <div class="viewer-nav">
+                    <!-- <div class="viewer-nav">
                         <div class="viewer-nav-content">
                             <mat-sidenav #drawer mode="side" opened>
                                 <div class="sidenav-nav-content">
-                                    <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms"
-                                        aria-expanded="false"> Dashboard</button>
-                                    <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms"
-                                        aria-expanded="false">Match Details</button>
+                                    <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false"> Dashboard</button>
+                                    <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Match Details</button>
                                     <button class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Rule</button>
-                                    <button (click)="goToUser()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms"
-                                        aria-expanded="false">User</button>
+                                    <button (click)="goToUser()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">User</button>
                                 </div>
                             </mat-sidenav>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="viewer">
                         <div class="viewer-content">
                             <router-outlet></router-outlet>
