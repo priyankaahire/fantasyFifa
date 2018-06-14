@@ -1,35 +1,87 @@
-{{username}}
-<br />
-<button (click)="logout()">Logout</button>
-<hr />
-<ul>
-  <li *ngFor="let match of matches | async">
-    {{match.firstteam}} vs {{match.secondteam}}
-    <small>{{match.starttime | date:"MMM d, y h:mm a"}}</small>
-    <br/>
-    <span>Current Selected: {{match.currentSelected(userid)}}</span>
-    <br/>
-    <label>
-      <input [disabled]="freezeBettings(match.starttime)" type="radio"
-        [checked]="teamselection[match.key] == FIRSTTEAM"
-        [value]="FIRSTTEAM"
-        (change)="onSelectionChange(FIRSTTEAM, match.key)"  >
-      {{match.firstteam}}
-    </label>
-    <label>
-      <input [disabled]="freezeBettings(match.starttime)" type="radio"
-        [checked]="teamselection[match.key] == SECONDTEAM"
-        [value]="SECONDTEAM"
-        (change)="onSelectionChange(SECONDTEAM, match.key)" >
-      {{match.secondteam}}
-    </label>
-    <label>
-      <input [disabled]="freezeBettings(match.starttime)" type="radio"
-      [checked]="teamselection[match.key] == DRAW"
-      [value]="DRAW"
-      (change)="onSelectionChange(DRAW, match.key)" >
-      Draw
-    </label>
-    <button [disabled]="freezeBettings(match.starttime)" (click)="placeBet(match.key)">Save</button>
-  </li>
-</ul>
+<!-- <div class="user-container">
+    <span>{{username}}</span>
+    <br />
+    <button (click)="logout()">Logout</button>
+    <hr />
+    <div class="match-description">
+        <mat-card class="" style="height: 145px;
+    margin-bottom: 12px;" *ngFor="let match of matches | async">
+            <mat-card-content>
+                <div class="" style="width:20%; float: left;">
+                    {{match.firstteam}} vs {{match.secondteam}}
+                    <small>{{match.starttime | date:"MMM d, y h:mm a"}}</small>
+                    <br/>
+                    <span>Current Selected: {{match.currentSelected(userid)}}</span>
+                    <br/>
+                </div>
+                <div class="" style="width:45%; margin-left: 22%;">
+                    <label>
+                    <input [disabled]="freezeBettings(match.starttime)" type="radio"
+                        [checked]="teamselection[match.key] == FIRSTTEAM"
+                        [value]="FIRSTTEAM"
+                        (change)="onSelectionChange(FIRSTTEAM, match.key)"  >
+                      {{match.firstteam}}
+                    </label>
+                    <label>
+                      <input [disabled]="freezeBettings(match.starttime)" type="radio"
+                        [checked]="teamselection[match.key] == SECONDTEAM"
+                        [value]="SECONDTEAM"
+                        (change)="onSelectionChange(SECONDTEAM, match.key)" >
+                      {{match.secondteam}}
+                    </label>
+                    <label>
+                      <input [disabled]="freezeBettings(match.starttime)" type="radio"
+                      [checked]="teamselection[match.key] == DRAW"
+                      [value]="DRAW"
+                      (change)="onSelectionChange(DRAW, match.key)" >
+                      Draw
+                    </label>
+                </div>
+                <div class="">
+                    <div class="save-button"> <button [disabled]="freezeBettings(match.starttime)" (click)="placeBet(match.key)" mat-raised-button color="primary">Save</button></div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div> -->
+<div class="" style="width:100%;">
+    <div class="">
+        <span>{{username}}</span><br />
+        <button (click)="logout()">Logout</button>
+        <hr/>
+    </div>
+    <div class="">
+        <ul>
+            <li *ngFor="let match of matches | async">
+                {{match.firstteam}} vs {{match.secondteam}}
+                <small>{{match.starttime | date:"MMM d, y h:mm a"}}</small>
+                <br/>
+                <span>Current Selected: {{match.currentSelected(userid)}}</span>
+                <br/>
+                <label>
+                      <input [disabled]="freezeBettings(match.starttime)" type="radio"
+                        [checked]="teamselection[match.key] == FIRSTTEAM"
+                        [value]="FIRSTTEAM"
+                        (change)="onSelectionChange(FIRSTTEAM, match.key)"  >
+                      {{match.firstteam}}
+                    </label>
+                <label>
+                      <input [disabled]="freezeBettings(match.starttime)" type="radio"
+                        [checked]="teamselection[match.key] == SECONDTEAM"
+                        [value]="SECONDTEAM"
+                        (change)="onSelectionChange(SECONDTEAM, match.key)" >
+                      {{match.secondteam}}
+                    </label>
+                <label>
+                      <input [disabled]="freezeBettings(match.starttime)" type="radio"
+                      [checked]="teamselection[match.key] == DRAW"
+                      [value]="DRAW"
+                      (change)="onSelectionChange(DRAW, match.key)" >
+                      Draw
+                    </label>
+                <button [disabled]="freezeBettings(match.starttime)" (click)="placeBet(match.key)">Save</button>
+            </li>
+        </ul>
+    </div>
+
+</div>

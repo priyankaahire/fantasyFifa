@@ -11,19 +11,17 @@ import { HttpModule } from '@angular/http';
 import { TeamComponent } from './team/team.component';
 import { LoginComponent } from './login/login.component';
 import { BetComponent } from './bet/bet.component';
-
 import { AuthService } from './services/auth.service';
-
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 import { MatchService } from './services/match.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DashboardComponent, UserComponent, TeamComponent, LoginComponent, BetComponent
+    AppComponent, DashboardComponent, UserComponent, TeamComponent, LoginComponent, BetComponent, HeaderComponent
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule, ReactiveFormsModule,
@@ -31,7 +29,7 @@ import { MatchService } from './services/match.service';
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AppRoutingModule
+    AppRoutingModule,
     SharedModule, AppRoutingModule
   ],
   providers: [AuthService, MatchService],

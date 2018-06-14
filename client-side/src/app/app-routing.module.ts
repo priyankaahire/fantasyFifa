@@ -10,10 +10,10 @@ import { BetComponent } from './bet/bet.component';
 const routes: Routes = [
     { path: '', redirectTo: 'bet', pathMatch: 'full' },
     { path: 'bet', component: BetComponent },
-    {path: 'dashboard', component: DashboardComponent },
-    {path: 'users', component: UserComponent },
-    {path: 'team', component: TeamComponent },
-    {path: 'login', component: LoginComponent }
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'users', component: UserComponent },
+    { path: 'team', component: TeamComponent },
+    { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

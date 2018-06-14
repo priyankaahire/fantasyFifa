@@ -1,1 +1,18 @@
+.login-container {
+    width: 100%;
+    margin: 30px 20px 20px 20px;
+}
 
+.login-content {
+    width: 50%;
+    border: 1px solid #eee;
+    margin-left: 26%;
+    margin-top: 12%;
+    padding-left: 234px;
+}
+
+@media screen and (max-width: 800px) {
+    .login-content {
+        margin-left: -57%;
+    }
+}

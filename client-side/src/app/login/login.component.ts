@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
       }
     })
   }
-
   login() {
+   // this.router.navigate(['dashboard']);
     this.authService.signInWithGoogle().then((data) => {
       this.router.navigate(['bet']);
     });
