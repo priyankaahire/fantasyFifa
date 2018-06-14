@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service';
 import { MatchService } from '../services/match.service';
 
-import { Match } from '../models/match';
+import { Match } from '../model/match';
 
 @Component({
   selector: 'app-bet',

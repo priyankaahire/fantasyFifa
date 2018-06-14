@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { Match } from '../models/match';
+import { Match } from '../model/match';
 
 import {
   AngularFireDatabase
