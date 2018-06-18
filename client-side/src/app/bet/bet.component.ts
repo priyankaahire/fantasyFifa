@@ -13,7 +13,7 @@ import { Match } from '../model/match';
   styleUrls: ['./bet.component.css']
 })
 export class BetComponent implements OnInit {
-
+  public favoriteTeam: string;
   public matches: Observable<Match[]>;
   public teamselection:any = {};
   public userid;
@@ -54,11 +54,14 @@ export class BetComponent implements OnInit {
 
   onSelectionChange(team, matchid) {
     this.teamselection[matchid] = team;
+    this.favoriteTeam = team;
   }
-
   freezeBettings(time): boolean {
     const now: number = new Date().getTime();
-    return now >= time;
+    if (now >= time) {
+      return true;
+    } else {
+     return false;
   }
-
+}
 }

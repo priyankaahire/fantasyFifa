@@ -14,6 +14,7 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    username: string;
   constructor (private router: Router) {
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
@@ -21,6 +22,7 @@ export class AppComponent {
   }
   ngOnInit() {
     console.log('Component Init:App');
+    this.username = sessionStorage.getItem("username");
 }
 
 ngOnDestroy() {
@@ -39,6 +41,13 @@ private navigationInterceptor(event: RouterEvent): void {
     }
     if (event instanceof NavigationError) {
         console.log('error:' + JSON.stringify(event));
+    }
+}
+userIsLogged() {
+    if (this.username) {
+        return true
+    } else {
+        return false;
     }
 }
 }

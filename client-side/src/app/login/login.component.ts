@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+username: string
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -19,8 +19,10 @@ export class LoginComponent implements OnInit {
     })
   }
   login() {
-   // this.router.navigate(['dashboard']);
     this.authService.signInWithGoogle().then((data) => {
+      this.username = data.user.displayName;
+      console.log("usernamse " + data.user.displayName);
+      sessionStorage.setItem("username", this.username);
       this.router.navigate(['bet']);
     });
   }

@@ -4,11 +4,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
-import { TeamComponent } from './team/team.component';
 import { LoginComponent } from './login/login.component';
 import { BetComponent } from './bet/bet.component';
 import { AuthService } from './services/auth.service';
@@ -21,7 +18,7 @@ import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DashboardComponent, UserComponent, TeamComponent, LoginComponent, BetComponent, HeaderComponent
+    AppComponent, LoginComponent, BetComponent, HeaderComponent
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule, ReactiveFormsModule,

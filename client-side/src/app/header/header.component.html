@@ -1,51 +1,15 @@
-<div class="app-header">
-    <div class="header">
+
         <div class="header-content">
             <div class="header-content-left">
-                {{ title }}!
+               <a styleclass="header-title" target="_blank" href="https://www.fifa.com/worldcup/matches/match/300331503/#motm" >{{ title }}!</a> 
             </div>
             <div class="header-content-center">
             </div>
             <div class="header-content-right">
-                <nav class="navbar">
-                    <!-- <div class="container-fluid">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false"> Dashboard</button></li>
-                            <li>
-                                <button (click)="goToDashboard()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Match Details</button>
-                            </li>
-                            <li>
-                                <button (click)="goToBet()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Bet</button>
-
-                            </li>
-                            <li>
-                                <button class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Rule</button>
-
-                            </li>
-                            <li>
-                                <button (click)="goToUser()" class="nav-content-btn" expanded="true" aria-label="Form Controls, section toggle" aria-controls="panel-forms" aria-expanded="false">Login</button>
-                            </li>
-
-                        </ul>
-                    </div> -->
-                </nav>
+                <button class="menu-button" mat-button [matMenuTriggerFor]="menu">Menu</button>
+                <mat-menu #menu="matMenu" class="menu-bar">
+                    <button (click)="goToBet()" mat-menu-item>Bet</button>
+                    <button (click)="goToResult()" mat-menu-item>Result</button>
+                </mat-menu>
             </div>
         </div>
-    </div>
-</div>
-<mat-sidenav-container class="example-container">
-    <mat-sidenav-content class="main-content">
-        <div class="sidenav-content">
-            <div class="sidenav-inner-content">
-                <div class="sidenav-body-content">
-                    <div class="viewer">
-                        <div class="viewer-content">
-                            <router-outlet></router-outlet>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
