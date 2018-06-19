@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { AuthService } from '../services/auth.service';
 import { MatchService } from '../services/match.service';
+import { UserService } from '../services/user.service';
 
 import { Match } from '../model/match';
 
@@ -18,12 +19,13 @@ export class BetComponent implements OnInit {
   public teamselection:any = {};
   public userid;
   public username;
+  public score;
   public readonly FIRSTTEAM = Match.FIRSTTEAM;
   public readonly SECONDTEAM = Match.SECONDTEAM;
   public readonly DRAW = Match.DRAW;
 
   constructor(private authService: AuthService, private router: Router,
-    private matchService: MatchService) {}
+    private matchService: MatchService, private userService: UserService) {}
 
   ngOnInit() {
     this.authService.user.subscribe(
@@ -33,6 +35,11 @@ export class BetComponent implements OnInit {
         } else {
           this.userid = auth.uid;
           this.username = auth.displayName;
+          this.userService.getUserDetails(this.userid).subscribe(user => {
+            if (user != null) {
+              this.score = user['score'];
+            }
+          });
         }
       }
     );
@@ -45,10 +52,10 @@ export class BetComponent implements OnInit {
     })
   }
 
-  placeBet(matchid) {
-    console.log(this.teamselection);
-    if (this.userid != null && this.teamselection != null) {
-      this.matchService.betOnMatch(matchid, this.teamselection[matchid], this.userid);
+  placeBet(match) {
+
+    if (this.userid != null && this.teamselection != null && !this.freezeBettings(match.starttime)) {
+      this.matchService.betOnMatch(match.key, this.teamselection[match.key], this.userid);
     }
   }
 

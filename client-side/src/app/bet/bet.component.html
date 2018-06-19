@@ -1,4 +1,6 @@
-{{username}}
+<a routerLink="/leaderboard">Leaderboard</a>
+<br />
+{{username}} <span *ngIf="score !== undefined">-</span> {{score | number : '1.2-2'}}
 <br />
 <button (click)="logout()">Logout</button>
 <hr />
@@ -30,6 +32,6 @@
       (change)="onSelectionChange(DRAW, match.key)" >
       Draw
     </label>
-    <button [disabled]="freezeBettings(match.starttime)" (click)="placeBet(match.key)">Save</button>
+    <button [disabled]="freezeBettings(match.starttime)" (click)="placeBet(match)">Save</button>
   </li>
 </ul>

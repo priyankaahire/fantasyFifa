@@ -1,0 +1,9 @@
+<a routerLink="/bet">Bets</a>
+<h1>Leaderboard</h1>
+<ul>
+  <li *ngFor="let leader of leaders">
+    <img class="profilepic" [src]="leader.photoURL" />
+    {{leader.name}} -
+    {{leader.score | number : '1.2-2'}}
+  </li>
+</ul>

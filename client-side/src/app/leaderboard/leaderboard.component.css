@@ -1,0 +1,7 @@
+.profilepic {
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid #999;
+  position: relative;
+  top: 20px;
+}
