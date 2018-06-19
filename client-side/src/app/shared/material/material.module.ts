@@ -13,7 +13,8 @@ import {
   MatSidenavModule,
   MatToolbarModule,
   MatRadioButton,
-  MatTableModule
+  MatTableModule,
+  MatMenuModule,
 } from '@angular/material';
 
 @NgModule({
@@ -31,7 +32,7 @@ import {
     MatSidenavModule,
     MatTableModule,
     MatRadioModule,
-
+    MatMenuModule
   ],
   exports: [
     MatButtonModule,
@@ -46,6 +47,7 @@ import {
     MatSidenavModule,
     MatTableModule,
     MatRadioModule,
+    MatMenuModule
   ],
   declarations: [
     ],

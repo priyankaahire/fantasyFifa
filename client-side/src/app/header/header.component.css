@@ -1,0 +1,46 @@
+.header-title {
+            color: #ffffff;
+            cursor: pointer;
+        }
+        .header-title a {
+            color: #ffffff !important;
+
+        }
+            .header-content {
+                flex-direction: row;
+                box-sizing: border-box;
+                display: flex;
+                place-content: center;
+                align-items: center;
+                flex: 1 1 0%;
+            }
+
+            .header-content-left {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .header-content-right {
+                width: 60%;
+            }
+            .header-content-center {
+                display: table-cell;
+                width: 100%;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .button {
+                border-left: none;
+            }
+
+            .app-content {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .mat-menu-panel .mat-menu-content {
+                background: #002d72 !important;
+            }
+           .menu-button {
+                float: right;
+                right: 0;
+}

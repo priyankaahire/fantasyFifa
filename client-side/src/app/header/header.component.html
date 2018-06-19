@@ -1,0 +1,16 @@
+<div class="header-content">
+  <div class="header-content-left">
+    <a class="header-title" target="_blank" href="https://www.fifa.com/worldcup/matches/match/300331503/#motm">
+      {{ title }}!
+    </a>
+  </div>
+  <div class="header-content-center">
+  </div>
+  <div class="header-content-right">
+    <button class="menu-button" mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu" class="menu-bar">
+      <button (click)="goToLink('/bet')" mat-menu-item>Bet</button>
+      <button (click)="goToLink('/leaderboard')" mat-menu-item>LeaderBoard</button>
+    </mat-menu>
+  </div>
+</div>

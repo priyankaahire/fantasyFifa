@@ -14,17 +14,20 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { SharedModule } from './shared/shared.module';
 
 import { MatchService } from './services/match.service';
 import { UserService } from './services/user.service';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, BetComponent, LeaderboardComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule, ReactiveFormsModule,
@@ -32,7 +35,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [AuthService, MatchService, UserService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
