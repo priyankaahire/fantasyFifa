@@ -10,7 +10,9 @@ export class Match {
     public starttime: number,
     private bets_firstteam: object | null,
     private bets_secondteam: object | null,
-    private bets_draw: object | null
+    private bets_draw: object | null,
+    public result: string | null,
+    public points: number | null
   ) {}
 
   currentSelected(userid: string) {

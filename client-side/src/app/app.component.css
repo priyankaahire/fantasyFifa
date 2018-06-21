@@ -9,18 +9,16 @@
 .main-container {
     top: 61px;
     position: relative;
-    max-height: 550px;
     overflow-y: scroll;
     width: 100%;
 }
-.footer-container  {
+.footer-container {
     background: #002d72;
     color: #fff;
     top: 600px;
     padding: 0.01em 16px;
     position: fixed;
     width: 100%;
-
 }
 @media screen and (max-width: 600px) {
     .header-container {

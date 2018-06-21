@@ -22,7 +22,9 @@ export class MatchService {
             c.payload.val()['starttime'],
             c.payload.val()['bets_firstteam'],
             c.payload.val()['bets_secondteam'],
-            c.payload.val()['bets_draw']
+            c.payload.val()['bets_draw'],
+            c.payload.val()['result'],
+            c.payload.val()['points']
           )
         )
       )

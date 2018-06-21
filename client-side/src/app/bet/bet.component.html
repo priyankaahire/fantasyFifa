@@ -4,10 +4,14 @@
 <hr />
 <ul>
   <li *ngFor="let match of matches | async">
-    {{match.firstteam}} vs {{match.secondteam}}
+    <span [ngClass]="match.result == 'bets_firstteam' ? 'winner' : ''">{{match.firstteam}}</span> vs <span [ngClass]="match.result == 'bets_secondteam' ? 'winner' : ''">{{match.secondteam}}</span>&nbsp;
     <small>{{match.starttime | date:"MMM d, y h:mm a"}}</small>
     <br/>
     <span>Current Selected: {{match.currentSelected(userid)}}</span>
+    <br/>
+    <span *ngIf="match.points">
+      Points: {{match.points | number : '1.2-2'}}
+    </span>
     <br/>
     <label>
       <input [disabled]="freezeBettings(match.starttime)" type="radio"

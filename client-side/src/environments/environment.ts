@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: <YOUR_APIKEY>,
-    authDomain: <YOUR_AUTHDOMAIN>,
-    databaseURL: <YOUR_DATABASEURL>,
-    projectId: <YOUR_PROJECTID>,
-    storageBucket: <YOUR_STORAGEBUCKET>,
-    messagingSenderId: <YOUR_MESSAGESENDERID>
+    apiKey: "AIzaSyAMmCVRrieH7yxyAquSFiIV0wgmS29IroQ",
+    authDomain: "fantasyfifa-staging.firebaseapp.com",
+    databaseURL: "https://fantasyfifa-staging.firebaseio.com",
+    projectId: "fantasyfifa-staging",
+    storageBucket: "fantasyfifa-staging.appspot.com",
+    messagingSenderId: "87014655111"
   }
 };
 
