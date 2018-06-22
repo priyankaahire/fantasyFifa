@@ -1,0 +1,27 @@
+<div *ngIf="match">
+    <h1>{{ match.firstteam }} vs {{ match.secondteam }}</h1>
+    <div *ngIf="match.bets_firstteam?.length > 0">
+      <h2>{{ match.firstteam }}</h2>
+      <ul>
+        <li *ngFor="let player of match.bets_firstteam">
+          <app-user [userid]="player"></app-user>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="match.bets_secondteam?.length > 0">
+      <h2>{{ match.secondteam }}</h2>
+      <ul>
+        <li *ngFor="let player of match.bets_secondteam">
+          <app-user [userid]="player"></app-user>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="match.bets_draw?.length > 0">
+      <h2>Draw</h2>
+      <ul>
+        <li *ngFor="let player of match.bets_draw">
+          <app-user [userid]="player"></app-user>
+        </li>
+      </ul>
+    </div>
+</div>
