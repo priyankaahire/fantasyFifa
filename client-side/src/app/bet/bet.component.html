@@ -5,7 +5,7 @@
 <ul>
   <li *ngFor="let match of matches | async">
     <span [ngClass]="match.result == 'bets_firstteam' ? 'winner' : ''">{{match.firstteam}}</span> vs <span [ngClass]="match.result == 'bets_secondteam' ? 'winner' : ''">{{match.secondteam}}</span>&nbsp;
-    <small>{{match.starttime | date:"MMM d, y h:mm a"}}</small>
+    <small>{{match.starttime | date:"MMM d, y h:mm a"}}</small>&nbsp;<a *ngIf="freezeBettings(match.starttime)" routerLink="/betdetail/{{match.key}}">bets</a>
     <br/>
     <span>Current Selected: {{match.currentSelected(userid)}}</span>
     <br/>

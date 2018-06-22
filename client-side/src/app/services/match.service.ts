@@ -15,18 +15,7 @@ export class MatchService {
   getTodaysMatches() {
     return this._db.list('/matches', ref => ref.orderByChild('starttime')).snapshotChanges().pipe(
       map(changes =>
-        changes.map(c => new Match(
-            c.payload.key,
-            c.payload.val()['firstteam'],
-            c.payload.val()['secondteam'],
-            c.payload.val()['starttime'],
-            c.payload.val()['bets_firstteam'],
-            c.payload.val()['bets_secondteam'],
-            c.payload.val()['bets_draw'],
-            c.payload.val()['result'],
-            c.payload.val()['points']
-          )
-        )
+        changes.map(c => this.mapMatch(c))
       )
     );
   }
@@ -62,5 +51,37 @@ export class MatchService {
     for(let bet of bets) {
       this._db.object(bet).remove();
     }
+  }
+
+  getMatchBets(matchid: string) {
+    return this._db.object(`/matches/${matchid}/`).snapshotChanges().pipe(
+      map(c => this.mapMatch(c))
+    );
+  }
+
+  private mapMatch(c) {
+    let bets_firstteam = [];
+    let bets_secondteam = [];
+    let bets_draw = [];
+    if (c['payload'].val()['bets_firstteam']) {
+      bets_firstteam = Object.keys(c['payload'].val()['bets_firstteam']);
+    }
+    if (c['payload'].val()['bets_secondteam']) {
+      bets_secondteam = Object.keys(c['payload'].val()['bets_secondteam']);
+    }
+    if (c['payload'].val()['bets_draw']) {
+      bets_draw = Object.keys(c['payload'].val()['bets_draw']);
+    }
+    return new Match(
+      c.key,
+      c['payload'].val()['firstteam'],
+      c['payload'].val()['secondteam'],
+      c['payload'].val()['starttime'],
+      bets_firstteam,
+      bets_secondteam,
+      bets_draw,
+      c['payload'].val()['result'],
+      c['payload'].val()['points']
+    );
   }
 }
