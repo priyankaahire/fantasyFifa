@@ -77,7 +77,7 @@
   </li>
 </ul> -->
 <div class="bet-container">
-  <span>{{username}}</span>
+  {{username}} <span *ngIf="score !== undefined">-</span> {{score | number : '1.2-2'}}
   <br />
   <button (click)="logout()">Logout</button>
   <hr />
