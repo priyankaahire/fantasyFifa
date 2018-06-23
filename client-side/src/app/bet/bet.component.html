@@ -121,9 +121,8 @@ margin-bottom: 12px;" *ngFor="let match of matches | async">
                   Draw
                 </label>
                 <div class="save-button">
-                  <button (click)="placeBet(match.key)" mat-raised-button color="primary">Save</button>&nbsp;
-                  <!-- <a *ngIf="freezeBettings(match.starttime)" (click)="openDialog()" >bets</a> -->
-                  <button (click)="openBets(match.key)"  mat-raised-button color="primary">Bets</button>
+                  <button [disabled]="freezeBettings(match.starttime)" (click)="placeBet(match.key)" mat-raised-button color="primary">Save</button>&nbsp;
+                  <button [disabled]="freezeBettings(match.starttime)" (click)="openBets(match.key)"  mat-raised-button color="primary">Bets</button>
                 </div>
               </div>
           </div>
