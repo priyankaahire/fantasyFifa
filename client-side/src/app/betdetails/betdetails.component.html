@@ -1,5 +1,5 @@
-<div class="betdetails-container" *ngIf="match">
-    <h1>{{ match.firstteam }} vs {{ match.secondteam }}</h1>
+<!-- <div *ngIf="match">
+    <b>{{ match.firstteam }} vs {{ match.secondteam }}</b>
     <div *ngIf="match.bets_firstteam?.length > 0">
       <h2>{{ match.firstteam }}</h2>
       <ul>
@@ -24,4 +24,33 @@
         </li>
       </ul>
     </div>
+</div> -->
+<div class="betdetails-container" *ngIf="match">
+  <h4 class="betdetails-title">{{ match.firstteam }} vs {{ match.secondteam }}</h4>
+  <mat-dialog-content>
+    <div *ngIf="match.bets_firstteam?.length > 0">
+      <b>{{ match.firstteam }}</b>
+      <ul>
+        <li *ngFor="let player of match.bets_firstteam">
+          <app-user [userid]="player"></app-user>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="match.bets_secondteam?.length > 0">
+      <b>{{ match.secondteam }}</b>
+      <ul>
+        <li *ngFor="let player of match.bets_secondteam">
+          <app-user [userid]="player"></app-user>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="match.bets_draw?.length > 0">
+      <b>Draw</b>
+      <ul>
+        <li *ngFor="let player of match.bets_draw">
+          <app-user [userid]="player"></app-user>
+        </li>
+      </ul>
+    </div>
+  </mat-dialog-content>
 </div>

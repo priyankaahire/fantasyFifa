@@ -7,6 +7,8 @@ import { MatchService } from '../services/match.service';
 import { UserService } from '../services/user.service';
 
 import { Match } from '../model/match';
+import { MatDialog } from '@angular/material';
+import { BetdetailsComponent } from '../betdetails/betdetails.component';
 
 @Component({
   selector: 'app-bet',
@@ -25,7 +27,8 @@ export class BetComponent implements OnInit {
   public readonly DRAW = Match.DRAW;
 
   constructor(private authService: AuthService, private router: Router,
-    private matchService: MatchService, private userService: UserService) {}
+    private matchService: MatchService, private userService: UserService,
+    private dialog: MatDialog) {}
 
   ngOnInit() {
     this.authService.user.subscribe(
@@ -67,5 +70,12 @@ export class BetComponent implements OnInit {
     const now: number = new Date().getTime();
     return now >= time;
   }
-
+  openBets(matchkey): void {
+    let dialogRef = this.dialog.open(BetdetailsComponent, {
+      data: {matchid:matchkey}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    })
+  }
 }

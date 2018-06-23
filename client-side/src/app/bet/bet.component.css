@@ -1,3 +1,32 @@
+.bet-container {
+  margin-top: 12px;
+}
 .winner {
   color: #28a745;
+}
+.bet-points {
+  color: #4286f4;
+}
+.bet-mat-container
+{
+  padding: 0px;  
+}
+.left-div
+{
+  text-align: left;
+  /* background-color: #eee; */
+  border-radius: 3px;
+  vertical-align: top;
+}
+.right-div
+{
+  text-align: left;
+  border-radius: 3px;
+}
+@media screen and (max-width: 600px) 
+{
+  .left-div, .right-div
+    {
+       max-width: 100%;
+    }
 }

@@ -5,11 +5,10 @@
     position: fixed;
     z-index: 999;
     width: 100%;
+    top: 0;
 }
 .main-container {
-    top: 61px;
-    position: relative;
-    overflow-y: scroll;
+    margin-top: 52px;
     width: 100%;
 }
 .footer-container {

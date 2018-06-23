@@ -20,7 +20,6 @@ import { MatchService } from './services/match.service';
 import { UserService } from './services/user.service';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { BetdetailsComponent } from './betdetails/betdetails.component';
 import { UserComponent } from './user/user.component';
@@ -28,7 +27,6 @@ import { UserComponent } from './user/user.component';
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, BetComponent, LeaderboardComponent,
-    DashboardComponent,
     HeaderComponent,
     BetdetailsComponent,
     UserComponent

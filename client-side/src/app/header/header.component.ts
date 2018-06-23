@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,14 +9,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   title = 'FIFA';
-
-  constructor(private router: Router) { }
-
+  public username;
+  constructor(private router: Router, private authService: AuthService) {
+   }
   ngOnInit() {
   }
-
   goToLink(url: string) {
     this.router.navigate([url]);
   }
-
 }
