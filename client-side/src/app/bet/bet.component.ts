@@ -72,8 +72,7 @@ export class BetComponent implements OnInit {
   }
   openBets(matchkey): void {
     let dialogRef = this.dialog.open(BetdetailsComponent, {
-      width:'400px',
-      data: {matchid:matchkey},
+      data: {matchid:matchkey}
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
