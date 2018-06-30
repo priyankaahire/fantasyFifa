@@ -34,7 +34,7 @@ margin-bottom: 12px;" *ngFor="let match of matches | async">
                     (change)="onSelectionChange(SECONDTEAM, match.key)" >
                   {{match.secondteam}}
                 </label>
-                <label>
+                <label *ngIf="match.starttime < 1530343994000">
                   <input [disabled]="freezeBettings(match.starttime)" type="radio"
                   [checked]="teamselection[match.key] == DRAW"
                   [value]="DRAW"
